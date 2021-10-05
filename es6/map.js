@@ -5,8 +5,8 @@ const output = numbers.map(x => x * 2);
 
 
 const sqare = [4, 6, 8, 10];
-const output2 = numbers.map(x => x * x);
-// console.log(output2);
+const output2 = numbers.forEach(x => x * x);
+console.log(output2);
 
 // more map
 

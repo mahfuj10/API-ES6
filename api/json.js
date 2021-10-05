@@ -1,5 +1,4 @@
-
-/* fetch('https://jsonplaceholder.typicode.com/todos/1')
+fetch('https://jsonplaceholder.typicode.com/todos/1')
 .then(response => response.json())
 .then(json => console.log(json))
 
@@ -18,10 +17,6 @@ for(const user of json){
     ul.appendChild(li)
 }
 } 
-
- */
-
- 
 
 function placeholder(){
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -42,11 +37,22 @@ function postApi(api){
     }
   
 }
- 
 
-/* function comment(){
-    fetch('https://jsonplaceholder.typicode.com/comments')
-    .then(com => com.json())
-    .then(data => console.log(data))
+
+
+function getPhoto(){
+    fetch('https://jsonplaceholder.typicode.com/photos')
+    .then(data => data.json())
+    .then(json => allPhotos(json))
 }
-comment() */ 
+
+getPhoto();
+
+function allPhotos(photos){
+    const parent = document.getElementById('photos');
+    for(const photo of photos ){
+        const image = document.createElement('img');
+        image.src = photo.url;
+        parent.appendChild(image)
+    }
+}
